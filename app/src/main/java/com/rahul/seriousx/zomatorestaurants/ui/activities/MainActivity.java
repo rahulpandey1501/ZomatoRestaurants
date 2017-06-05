@@ -246,7 +246,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onTabRemove(String cuisine) {
-        Log.d("fragment", cuisine+"  removed");
         viewPager.getAdapter().notifyDataSetChanged();
     }
 

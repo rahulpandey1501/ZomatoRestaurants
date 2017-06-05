@@ -93,7 +93,6 @@ public class RestaurantFragment extends Fragment {
         cuisine = getArguments().getString("cuisine");
         isFavouritePage = getArguments().getBoolean("isFavouritePage");
         cuisineRestaurantMapping = EventBus.getDefault().getStickyEvent(TreeMap.class);
-        Log.d("fragment", "onCreate "+cuisine);
         restaurantList = cuisineRestaurantMapping.get(cuisine);
         if (restaurantList == null) {
             iCallBacks.onTabRemove(cuisine);
@@ -196,7 +195,6 @@ public class RestaurantFragment extends Fragment {
 
     @Subscribe
     public void onEvent(final SendCustomEvent event) {
-        Log.d("event", "onEvent "+event.getTypeOfEvent());
         if (event.getTypeOfEvent() == SendCustomEvent.EVENT_DB_CHANGE) { // DBChanges event
             cuisineRestaurantMapping = (TreeMap<String, Set<RestaurantInfoModel>>) event.getData();
             if (isFavouritePage) {

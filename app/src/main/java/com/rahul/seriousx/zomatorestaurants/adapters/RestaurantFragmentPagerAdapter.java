@@ -37,11 +37,6 @@ public class RestaurantFragmentPagerAdapter extends FragmentStatePagerAdapter{
         mFragmentTitleList.add(title);
     }
 
-//    @Override
-//    public int getItemPosition(Object object) {
-//        return POSITION_NONE;
-//    }
-
     @Override
     public CharSequence getPageTitle(int position) {
         return mFragmentTitleList.get(position);
